@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  background-color: skyblue;
+}
+
+.minHeight {
+  min-height: 100vh;
+}
+
+.custom-opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #e4dada3a;
+}
