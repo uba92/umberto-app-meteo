@@ -82,7 +82,14 @@ const MainContent = (props) => {
                     Temp Min {Math.ceil(meteoData.main?.temp_min)} &deg; C
                   </span>
                 </Card.Text>
-                <Card.Text></Card.Text>
+                <Card.Text>
+                  <span>
+                    <i className='bi bi-wind me-2'></i>
+                    {meteoData.wind?.speed} -
+                    <i class='bi bi-droplet-fill mx-2'></i>
+                    {meteoData.main?.humidity}
+                  </span>
+                </Card.Text>
               </Card>
             )}
           </div>
