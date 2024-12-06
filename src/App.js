@@ -18,7 +18,6 @@ function App() {
             <Route path='/forecast/:city' element={<Forecast />} />
           </Routes>
         </main>
-        <footer></footer>
       </div>
     </BrowserRouter>
   )
