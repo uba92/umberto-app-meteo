@@ -8,7 +8,7 @@ import {
   InputGroup,
   Form,
 } from 'react-bootstrap'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const MainContent = () => {
   const [query, setQuery] = useState('')
