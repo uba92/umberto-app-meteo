@@ -8,8 +8,9 @@ import {
   InputGroup,
   Form,
 } from 'react-bootstrap'
+import { Link, useParams } from 'react-router-dom'
 
-const MainContent = (props) => {
+const MainContent = () => {
   const [query, setQuery] = useState('')
   const [meteoData, setMeteoData] = useState({})
 
@@ -35,6 +36,7 @@ const MainContent = (props) => {
 
   useEffect(() => {
     getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   return (
@@ -67,8 +69,8 @@ const MainContent = (props) => {
                   <Image
                     src={`https://openweathermap.org/img/wn/${meteoData.weather?.[0]?.icon}@2x.png`}
                   />
-                  <p>Cloudiness {meteoData.clouds?.all} %</p>
                 </Card.Text>
+                <Card.Text>Cloudiness {meteoData.clouds?.all} %</Card.Text>
                 <Card.Text>
                   Feels Like Temperature: {meteoData.main?.feels_like} &deg; C
                 </Card.Text>
@@ -86,13 +88,20 @@ const MainContent = (props) => {
                   <span>
                     <i className='bi bi-wind me-2'></i>
                     {meteoData.wind?.speed} -
-                    <i class='bi bi-droplet-fill mx-2'></i>
+                    <i className='bi bi-droplet-fill mx-2'></i>
                     {meteoData.main?.humidity}
                   </span>
                 </Card.Text>
               </Card>
             )}
           </div>
+        </Col>
+      </Row>
+      <Row className=' my-3 justify-content-center'>
+        <Col sm={12} md={8} lg={6}>
+          <Link to={'/forecast/' + query}>
+            <p>Weekly Forecast</p>
+          </Link>
         </Col>
       </Row>
     </Container>
